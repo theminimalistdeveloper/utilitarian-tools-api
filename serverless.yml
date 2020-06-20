@@ -1,0 +1,33 @@
+---
+service: utilitarian-tools-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  apiKeys:
+    - ${opt:stage}-frontend
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - ses:SendEmail
+      Resource: '*'
+
+package:
+  excludeDevDependencies: false
+  individually: true
+  exclude:
+    - "**"
+
+functions:
+  AGCreateSuggestion:
+    package:
+      include:
+        - dist/AGCreateSuggestion/**
+    handler: dist/AGCreateSuggestion/index.handler
+    events:
+      - http:
+          cors: true
+          path: suggest
+          method: POST
+          private: true
+    description: Endpoint for creating a suggestion entry

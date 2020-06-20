@@ -1,0 +1,17 @@
+extends:
+  - airbnb-base
+  - plugin:jest/recommended
+env:
+  node: true
+  es6: true
+settings:
+  import/core-modules:
+    - aws-sdk
+parser: babel-eslint
+plugins:
+  - node
+rules:
+  no-console: 0
+  import/prefer-default-export: 0
+  class-methods-use-this: 0
+  max-classes-per-file: 0

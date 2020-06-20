@@ -1,0 +1,50 @@
+{
+  "name": "utilitarian-tools-api",
+  "description": "API for Utilitarian Tools project",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint --ignore-path .gitignore .",
+    "test": "jest"
+  },
+  "engines": {
+    "node": "12.14.1"
+  },
+  "jest-junit": {
+    "outputDirectory": "./coverage"
+  },
+  "pre-commit": [
+    "lint",
+    "test",
+    "build"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "serverless-aws-documentation": "^1.1.0",
+    "serverless-reqvalidator-plugin": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "@types/jest": "^24.9.1",
+    "aws-sdk": "2.536.0",
+    "babel-jest": "^26.0.1",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.10.0",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^26.0.1",
+    "jest-junit": "^10.0.0",
+    "npm-run-all": "^4.1.5",
+    "pre-commit": "^1.2.2",
+    "serverless": "^1.70.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "uuid": "^8.0.0",
+    "http-status-codes": "^1.4.0"
+  },
+  "license": "UNLINCESED"
+}
